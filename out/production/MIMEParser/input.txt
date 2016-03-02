@@ -1,0 +1,37 @@
+header: song
+content-type: multipart
+boundary=part1
+
+----=part1
+header: song1
+content-type: text
+
+test1-1
+----=part1
+header: song2
+content-type: multipart
+boundary=part2
+
+    ----=part2
+    header: song2
+    content-type: multipart
+    boundary=part3
+
+        ----=part3
+        header: song3-2
+        content-type: text
+
+        test3-1
+        ----=part3
+        header: song3-2
+        content-type: text
+
+        test3-2
+        ----=part3--
+    ----=part2
+        header: song2
+        content-type: text
+
+        test2
+    ----=part2--
+----=part1--
